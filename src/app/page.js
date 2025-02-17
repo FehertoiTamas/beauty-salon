@@ -49,15 +49,24 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <section className="testimonials-section">
-        <h2 className="section-title">What Our Clients Say</h2>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card">
-              <h3>{testimonial.name}</h3>
-              <p>{testimonial.date}</p>
-              <p>{testimonial.comment}</p>
-            </div>
-          ))}
+        <div className="testimonials-container">
+          <h2 className="section-title">What Our Clients Say</h2>
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card">
+                <div className="testimonial-header">
+                  <div className="avatar">
+                    <UserGroupIcon className="avatar-icon" />
+                  </div>
+                  <div className="testimonial-info">
+                    <h3 className="testimonial-name">{testimonial.name}</h3>
+                    <p className="testimonial-date">{testimonial.date}</p>
+                  </div>
+                </div>
+                <p className="testimonial-comment">{testimonial.comment}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
