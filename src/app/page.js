@@ -1,95 +1,128 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import { useState } from 'react';
+import { CalendarDaysIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import './styles/hero.css'; // Importáljuk a külön CSS fájlt
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">Elegance Beauty Salon</h1>
+          <p className="hero-subtitle">Discover your true beauty</p>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="btn-primary"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            Book Appointment
+          </button>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Services Section */}
+      <section className="services-section">
+        <h2 className="section-title">Our Services</h2>
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <div key={index} className="service-card">
+              <div className="service-icon">
+                <SparklesIcon className="icon" />
+              </div>
+              <h3>{service.name}</h3>
+              <p>{service.description}</p>
+              <p className="service-price">{service.price}</p>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="btn-primary"
+              >
+                Book Now
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="testimonials-section">
+        <h2 className="section-title">What Our Clients Say</h2>
+        <div className="testimonials-grid">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="testimonial-card">
+              <h3>{testimonial.name}</h3>
+              <p>{testimonial.date}</p>
+              <p>{testimonial.comment}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="contact-section">
+        <div className="contact-content">
+          <h2 className="contact-title">Book Your Appointment</h2>
+          <p className="contact-text">
+            Transform your look with our expert beauty services. Book your appointment today!
+          </p>
+          <div className="contact-container">
+            <div className="contact-hours">
+              <CalendarDaysIcon className="contact-hours-icon" />
+              <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
+            </div>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="book-btn"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>&copy; 2023 Elegance Beauty Salon. All rights reserved.</p>
       </footer>
-    </div>
+
+    </main>
   );
 }
+
+const services = [
+  {
+    name: "Luxury Facial Treatment",
+    description: "Revitalize your skin with our signature facial treatment using premium products.",
+    price: "$120"
+  },
+  {
+    name: "Hair Styling & Coloring",
+    description: "Transform your look with cutting-edge styling and premium hair coloring services.",
+    price: "From $80"
+  },
+  {
+    name: "Manicure & Pedicure",
+    description: "Pamper your hands and feet with our luxurious nail care treatments.",
+    price: "$65"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    date: "August 2023",
+    comment: "Absolutely amazing experience! The staff is professional and the results exceeded my expectations."
+  },
+  {
+    name: "Emily Davis",
+    date: "July 2023",
+    comment: "Best salon in town! I love how they transformed my hair and their attention to detail."
+  },
+  {
+    name: "Michelle Thompson",
+    date: "June 2023",
+    comment: "Such a relaxing atmosphere and fantastic service. I'll definitely be coming back!"
+  }
+];
