@@ -1,0 +1,115 @@
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: #f7fafc;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 24px;
+}
+
+.filter-controls {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.filter-controls button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #4a5568;
+  background-color: #edf2f7;
+  border: 1px solid #cbd5e0;
+  cursor: pointer;
+}
+
+.filter-controls button.active {
+  background-color: #ed64a6;
+  color: white;
+}
+
+.appointments-table {
+  overflow-x: auto;
+}
+
+.appointments-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appointments-table th,
+.appointments-table td {
+  padding: 16px;
+  text-align: left;
+}
+
+.appointments-table th {
+  background-color: #f7fafc;
+  color: #2d3748;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid #edf2f7;
+}
+
+.appointments-table td {
+  background-color: #ffffff;
+  color: #2d3748;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.status {
+  display: inline-flex;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 16px;
+}
+
+.status.pending {
+  background-color: #faf089;
+  color: #d69e2e;
+}
+
+.status.confirmed {
+  background-color: #48bb78;
+  color: #2f855a;
+}
+
+.status.cancelled {
+  background-color: #f56565;
+  color: #c53030;
+}
+
+.actions button {
+  padding: 6px 12px;
+  font-size: 12px;
+  margin-right: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.actions button:hover {
+  background-color: #e2e8f0;
+}
+
+.actions button:active {
+  background-color: #cbd5e0;
+}
