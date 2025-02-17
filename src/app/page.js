@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CalendarDaysIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import './styles/hero.css'; // Importáljuk a külön CSS fájlt
+import AppointmentModal from './components/AppointmentModal';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,6 +87,11 @@ export default function Home() {
       <footer className="footer">
         <p>&copy; 2023 Elegance Beauty Salon. All rights reserved.</p>
       </footer>
+
+      <AppointmentModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
 
     </main>
   );
