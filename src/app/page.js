@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="services-section">
-        <h2 className="section-title">Our Services</h2>
+        <h2 className="services-title">Our Services</h2>
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="service-card">
