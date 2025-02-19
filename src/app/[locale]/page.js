@@ -16,6 +16,8 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <section className="hero-section">
+        <div className='lang-switcher'> <LanguageSwitcher className='lang-icon' /></div>
+
         <div className="hero-content">
           <h1 className="hero-title">{t('title')}</h1>
           <p className="hero-subtitle">{t('description')}</p>
@@ -30,7 +32,6 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="services-section">
-        <LanguageSwitcher />
         <h2 className="services-title">Our Services</h2>
         <div className="services-grid">
           {services.map((service, index) => (
