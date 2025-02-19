@@ -1,46 +1,38 @@
-/* Alap stílusok */
 .lang-switcher-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  position: relative;
+  display: inline-block;
 }
 
-.lang-switcher-btns {
-  background-color: #444;
-  /* Sötétszürke háttér */
-  color: #fff;
-  /* Fehér szöveg */
+.globe-btn {
+  background: none;
   border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
+  font-size: 24px;
+  color: #333;
 }
 
-.lang-switcher-btns:hover {
-  background-color: #00bcd4;
-  /* Kiemelő szín */
-  color: #000;
-  /* Sötét szöveg */
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: -15px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.lang-switcher-btns:active {
-  transform: scale(0.95);
-  /* Kattintáskor enyhén összemegy */
+.lang-switcher-btn {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: left;
+  width: 100%;
 }
 
-/* Reszponzív stílusok */
-@media screen and (max-width: 768px) {
-  .lang-switcher-container {
-    gap: 0.5rem;
-  }
-
-  .lang-switcher-btns {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
-  }
+.lang-switcher-btn:hover {
+  background: #f0f0f0;
 }
