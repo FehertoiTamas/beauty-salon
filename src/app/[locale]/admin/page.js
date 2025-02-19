@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import "../styles/admin.css";
-import AdminGuard from "../components/AdminGuard";
+import AdminGuard from "../../components/AdminGuard";
 import { signOut } from "next-auth/react"; // 🔹 Kijelentkezés importálása
 
 export default function AdminDashboard() {

@@ -1,0 +1,46 @@
+/* Alap stílusok */
+.lang-switcher-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.lang-switcher-btns {
+  background-color: #444;
+  /* Sötétszürke háttér */
+  color: #fff;
+  /* Fehér szöveg */
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.lang-switcher-btns:hover {
+  background-color: #00bcd4;
+  /* Kiemelő szín */
+  color: #000;
+  /* Sötét szöveg */
+}
+
+.lang-switcher-btns:active {
+  transform: scale(0.95);
+  /* Kattintáskor enyhén összemegy */
+}
+
+/* Reszponzív stílusok */
+@media screen and (max-width: 768px) {
+  .lang-switcher-container {
+    gap: 0.5rem;
+  }
+
+  .lang-switcher-btns {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}

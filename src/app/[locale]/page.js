@@ -3,9 +3,13 @@
 import { useState } from 'react';
 import { CalendarDaysIcon, SparklesIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import './styles/hero.css'; // Importáljuk a külön CSS fájlt
-import AppointmentModal from './components/AppointmentModal';
+import AppointmentModal from '../components/AppointmentModal';
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import { useTranslations } from "next-intl";
+
 
 export default function Home() {
+  const t = useTranslations("LandingPage");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -13,8 +17,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Elegance Beauty Salon</h1>
-          <p className="hero-subtitle">Discover your true beauty</p>
+          <h1 className="hero-title">{t('title')}</h1>
+          <p className="hero-subtitle">{t('description')}</p>
           <button
             onClick={() => setIsModalOpen(true)}
             className="btn-primary"
@@ -26,6 +30,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="services-section">
+        <LanguageSwitcher />
         <h2 className="services-title">Our Services</h2>
         <div className="services-grid">
           {services.map((service, index) => (

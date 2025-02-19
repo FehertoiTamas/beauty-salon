@@ -1,6 +1,6 @@
 "use client";
 
-import "../styles/login.css";
+import "../[locale]/styles/login.css";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -17,7 +17,8 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (session) {
-      router.push("/admin");
+      const currentLocale = window.location.pathname.split("/")[1]; // Nyelv kiszedése az URL-ből
+      router.push(`/${currentLocale}/admin`);
     }
   }, [session, router]);
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import { format } from "date-fns";
 import "react-calendar/dist/Calendar.css";
-import "../styles/appointment-modal.css";
+import "../[locale]/styles/appointment-modal.css";
 
 export default function AppointmentModal({ isOpen, onClose }) {
   const [date, setDate] = useState(new Date());
