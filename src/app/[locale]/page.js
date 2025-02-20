@@ -12,6 +12,42 @@ export default function Home() {
   const t = useTranslations("LandingPage");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const services = [
+    {
+      name: t('service-1'),
+      description: t('service-1-description'),
+      price: t('service-1-price')
+    },
+    {
+      name: t('service-2'),
+      description: t('service-2-description'),
+      price: t('service-2-price')
+    },
+    {
+      name: "Manicure & Pedicure",
+      description: t('service-3-description'),
+      price: t('service-3-price')
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      date: "August 2023",
+      comment: "Absolutely amazing experience! The staff is professional and the results exceeded my expectations."
+    },
+    {
+      name: "Emily Davis",
+      date: "July 2023",
+      comment: "Best salon in town! I love how they transformed my hair and their attention to detail."
+    },
+    {
+      name: "Michelle Thompson",
+      date: "June 2023",
+      comment: "Such a relaxing atmosphere and fantastic service. I'll definitely be coming back!"
+    }
+  ];
+
   return (
     <main>
       {/* Hero Section */}
@@ -25,14 +61,14 @@ export default function Home() {
             onClick={() => setIsModalOpen(true)}
             className="btn-primary"
           >
-            Book Appointment
+            {t('cta-btn')}
           </button>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="services-section">
-        <h2 className="services-title">Our Services</h2>
+        <h2 className="services-title">{t('services-title')}</h2>
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="service-card">
@@ -46,7 +82,7 @@ export default function Home() {
                 onClick={() => setIsModalOpen(true)}
                 className="btn-primary"
               >
-                Book Now
+                {t('cta-btn-2')}
               </button>
             </div>
           ))}
@@ -56,7 +92,7 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="testimonials-section">
         <div className="testimonials-container">
-          <h2 className="section-title">What Our Clients Say</h2>
+          <h2 className="section-title">{t('testimonials-title')}</h2>
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-card">
@@ -111,39 +147,3 @@ export default function Home() {
     </main>
   );
 }
-
-const services = [
-  {
-    name: "Luxury Facial Treatment",
-    description: "Revitalize your skin with our signature facial treatment using premium products.",
-    price: "$120"
-  },
-  {
-    name: "Hair Styling & Coloring",
-    description: "Transform your look with cutting-edge styling and premium hair coloring services.",
-    price: "From $80"
-  },
-  {
-    name: "Manicure & Pedicure",
-    description: "Pamper your hands and feet with our luxurious nail care treatments.",
-    price: "$65"
-  }
-];
-
-const testimonials = [
-  {
-    name: "Sarah Johnson",
-    date: "August 2023",
-    comment: "Absolutely amazing experience! The staff is professional and the results exceeded my expectations."
-  },
-  {
-    name: "Emily Davis",
-    date: "July 2023",
-    comment: "Best salon in town! I love how they transformed my hair and their attention to detail."
-  },
-  {
-    name: "Michelle Thompson",
-    date: "June 2023",
-    comment: "Such a relaxing atmosphere and fantastic service. I'll definitely be coming back!"
-  }
-];

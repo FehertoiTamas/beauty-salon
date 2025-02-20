@@ -1,7 +1,20 @@
 {
   "LandingPage" : {
     "title": "Elegancia Szépségszalon",
-    "description": "Fedezze fel valódi szépségét"
+    "description": "Fedezze fel valódi szépségét",
+    "cta-btn" : "Időpontfoglalás",
+    "services-title": "Szolgáltatásaink",
+    "cta-btn-2": "Foglaljon most",
+    "service-1": "Luxus arckezelés",
+    "service-1-description" : "Élénkítse fel bőrét jellegzetes arckezelésünkkel prémium termékek felhasználásával.",
+    "service-1-price": "46.000",
+    "service-2": "Hajvágás és színezés",
+    "service-2-description": "Változtassa meg megjelenését a legmodernebb stílusokkal és prémium hajszínezési szolgáltatásokkal.",
+    "service-2-price": "30.000-tol",
+    "service-3": "Manikűr és pedikűr",
+    "service-3-description": "Kényeztesse kezét és lábát luxus körömápoló kezeléseinkkel.",
+    "service-3-price": "25.000",
+    "testimonials-title": "Mit mondanak ügyfeleink"
   }
 
 }

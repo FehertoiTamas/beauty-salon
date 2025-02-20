@@ -1,7 +1,20 @@
 {
   "LandingPage" : {
     "title": "Salón de belleza Elegance",
-    "description": "Descubre tu verdadera belleza"
+    "description": "Descubre tu verdadera belleza",
+    "cta-btn" : "Reservar cita",
+    "services-title": "Nuestros services",
+    "cta-btn-2": "Reservar ahora",
+    "service-1": "Tratamiento facial de lujo",
+    "service-1-description" : "Revitalice su piel con nuestro tratamiento facial exclusivo utilizando productos premium.",
+    "service-1-price": "S/440",
+    "service-2": "Corte y color de cabello",
+    "service-2-description": "Transforme su apariencia con estilos de vanguardia y servicios premium de coloración de cabello.",
+    "service-2-price": "desde S/300",
+    "service-3": "Manicura y pedicura",
+    "service-3-description": "Mima tus manos y pies con nuestros lujosos tratamientos de cuidado de uñas.",
+    "service-3-price": "S/250",
+    "testimonials-title": "Lo que dicen nuestros clientes"
   }
 
 }

@@ -1,7 +1,20 @@
 {
   "LandingPage" : {
     "title": "Elegance Beauty Salon",
-    "description": "Discover your true beauty"
+    "description": "Discover your true beauty",
+    "cta-btn" : "Book Appointment",
+    "services-title": "Our Services",
+    "cta-btn-2": "Book Now",
+    "service-1": "Luxory Facial Treatment",
+    "service-1-description" : "Revitalize your skin with our signature facial treatment using premium products.",
+    "service-1-price": "$120",
+    "service-2": "Hair Styling & Coloring",
+    "service-2-description": "Transform your look with cutting-edge styling and premium hair coloring services.",
+    "service-2-price": "from $80",
+    "service-3": "Manicure & Pedicure",
+    "service-3-description": "Pamper your hands and feet with our luxurious nail care treatments.",
+    "service-3-price": "$65",
+    "testimonials-title": "What Our Clients Say"
   }
 
 }
