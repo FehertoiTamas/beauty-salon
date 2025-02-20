@@ -115,20 +115,20 @@ export default function Home() {
       {/* Contact Section */}
       <section className="contact-section">
         <div className="contact-content">
-          <h2 className="contact-title">Book Your Appointment</h2>
+          <h2 className="contact-title">{t('contact-title')}</h2>
           <p className="contact-text">
-            Transform your look with our expert beauty services. Book your appointment today!
+            {t('contact-description')}
           </p>
           <div className="contact-container">
             <div className="contact-hours">
               <CalendarDaysIcon className="contact-hours-icon" />
-              <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
+              <span>{t('opening-hours')}</span>
             </div>
             <button
               onClick={() => setIsModalOpen(true)}
               className="book-btn"
             >
-              Book Now
+              {t('cta-btn-2')}
             </button>
           </div>
         </div>
