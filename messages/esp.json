@@ -24,6 +24,19 @@
     "contact-title": "Reserve su cita",
     "contact-description": "Transforma tu look con nuestros servicios de belleza expertos. ¡Reserva tu cita hoy!",
     "opening-hours": "Lun - Sáb: 9:00 AM - 8:00 PM"
+  },
+
+  "AppointmentModal": {
+    "title": "Reservar cita",
+    "service": "Servicio",
+    "service-label": "Seleccione un servicio",
+    "service-option-1": "Tratamiento facial de lujo",
+    "service-option-2": "Corte y color de cabello",
+    "service-option-3": "Manicura y pedicura",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "submit-btn": "Reservar cita"
   }
 
 }

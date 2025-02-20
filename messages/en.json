@@ -24,6 +24,19 @@
     "contact-title": "Book Your Appointment",
     "contact-description": "Transform your look with our expert beauty services. Book your appointment today!",
     "opening-hours": "Mon - Sat: 9:00 AM - 8:00 PM"
+  },
+
+  "AppointmentModal": {
+    "title": "Book Appointment",
+    "service": "Service",
+    "service-label": "Select a service",
+    "service-option-1": "Luxory Facial Treatment",
+    "service-option-2": "Hair Styling & Coloring",
+    "service-option-3": "Manicure & Pedicure",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "submit-btn": "Book Appointment"
   }
 
 }

@@ -24,6 +24,19 @@
     "contact-title": "Foglalja le időpontját",
     "contact-description": "Alakítsa át megjelenését szakértő szépségápolási szolgáltatásainkkal. Foglaljon időpontot még ma!",
     "opening-hours": "Hétfő - Szombat: 9:00 - 20:00"
+  },
+
+  "AppointmentModal": {
+    "title": "Időpontfoglalás",
+    "service": "Szolgáltatás",
+    "service-label": "Válasszon szolgáltatást",
+    "service-option-1": "Luxus arckezelés",
+    "service-option-2": "Hajvágás és színezés",
+    "service-option-3": "Manikűr és pedikűr",
+    "name": "Név",
+    "email": "E-mail",
+    "phone": "Telefonszám",
+    "submit-btn": "Időpontfoglalás"
   }
 
 }

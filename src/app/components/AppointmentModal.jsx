@@ -1,10 +1,11 @@
 "use client";
 
+import "../[locale]/styles/appointment-modal.css";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import { format } from "date-fns";
 import "react-calendar/dist/Calendar.css";
-import "../[locale]/styles/appointment-modal.css";
+import { useTranslations } from "next-intl";
 
 export default function AppointmentModal({ isOpen, onClose }) {
   const [date, setDate] = useState(new Date());
@@ -13,6 +14,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const t = useTranslations("AppointmentModal");
 
   if (!isOpen) return null;
 
@@ -64,7 +66,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
     <div className="modal-overlay">
       <div className="modal-content">
         <div className="modal-header">
-          <h2>Book Appointment</h2>
+          <h2>{t("title")}</h2>
           <button onClick={onClose} className="close-button">
             ✕
           </button>
@@ -91,26 +93,28 @@ export default function AppointmentModal({ isOpen, onClose }) {
           </div>
 
           <div className="input-group">
-            <label className="input-label">Service</label>
+            <label className="input-label">{t("service")}</label>
             <select
               value={service}
               onChange={(e) => setService(e.target.value)}
               className="input-field"
               required
             >
-              <option value="">Select a service</option>
+              <option value="">{t("service-label")}</option>
               <option value="Luxury Facial Treatment">
-                Luxury Facial Treatment
+                {t("service-option-1")}
               </option>
               <option value="Hair Styling & Coloring">
-                Hair Styling & Coloring
+                {t("service-option-2")}
               </option>
-              <option value="Manicure & Pedicure">Manicure & Pedicure</option>
+              <option value="Manicure & Pedicure">
+                {t("service-option-3")}
+              </option>
             </select>
           </div>
 
           <div className="input-group">
-            <label className="input-label">Name</label>
+            <label className="input-label">{t("name")}</label>
             <input
               type="text"
               value={name}
@@ -121,7 +125,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
           </div>
 
           <div className="input-group">
-            <label className="input-label">Email</label>
+            <label className="input-label">{t("email")}</label>
             <input
               type="email"
               value={email}
@@ -132,7 +136,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
           </div>
 
           <div className="input-group">
-            <label className="input-label">Phone</label>
+            <label className="input-label">{t("phone")}</label>
             <input
               type="tel"
               value={phone}
@@ -144,7 +148,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
 
           <div className="form-footer">
             <button type="submit" className="submit-button">
-              Book Appointment
+              {t("submit-btn")}
             </button>
           </div>
         </form>
