@@ -37,6 +37,13 @@
     "email": "E-mail",
     "phone": "Telefonszám",
     "submit-btn": "Időpontfoglalás"
+  },
+
+  "LoginPage": {
+    "title": "Admin bejelentkezés",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "submit-btn": "Bejelentkezés e-maillel"
   }
 
 }

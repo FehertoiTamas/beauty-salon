@@ -37,6 +37,13 @@
     "email": "Correo electrónico",
     "phone": "Teléfono",
     "submit-btn": "Reservar cita"
+  },
+
+  "LoginPage": {
+    "title": "Inicio de sesión de administrador",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit-btn": "Iniciar sesión con correo electrónico"
   }
 
 }

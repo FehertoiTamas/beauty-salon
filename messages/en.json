@@ -37,6 +37,13 @@
     "email": "Email",
     "phone": "Phone",
     "submit-btn": "Book Appointment"
+  },
+
+  "LoginPage": {
+    "title": "Admin Login",
+    "email": "Email",
+    "password": "Password",
+    "submit-btn": "Sign in with Email"
   }
 
 }
