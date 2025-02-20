@@ -14,7 +14,13 @@
     "service-3": "Manicure & Pedicure",
     "service-3-description": "Pamper your hands and feet with our luxurious nail care treatments.",
     "service-3-price": "$65",
-    "testimonials-title": "What Our Clients Say"
+    "testimonials-title": "What Our Clients Say",
+    "testimonials-1-date": "August 2024",
+    "testimonials-1-comment": "Absolutely amazing experience! The staff is professional and the results exceeded my expectations.",
+    "testimonials-2-date": "January 2025",
+    "testimonials-2-comment": "Best salon in town! I love how they transformed my hair and their attention to detail.",
+    "testimonials-3-date": "March 2025",
+    "testimonials-3-comment": "Such a relaxing atmosphere and fantastic service. I'll definitely be coming back!"
   }
 
 }

@@ -33,18 +33,18 @@ export default function Home() {
   const testimonials = [
     {
       name: "Sarah Johnson",
-      date: "August 2023",
-      comment: "Absolutely amazing experience! The staff is professional and the results exceeded my expectations."
+      date: t('testimonials-1-date'),
+      comment: t('testimonials-1-comment')
     },
     {
       name: "Emily Davis",
-      date: "July 2023",
-      comment: "Best salon in town! I love how they transformed my hair and their attention to detail."
+      date: t('testimonials-2-date'),
+      comment: t('testimonials-2-comment')
     },
     {
       name: "Michelle Thompson",
-      date: "June 2023",
-      comment: "Such a relaxing atmosphere and fantastic service. I'll definitely be coming back!"
+      date: t('testimonials-3-date'),
+      comment: t('testimonials-3-comment')
     }
   ];
 

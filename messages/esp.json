@@ -14,7 +14,13 @@
     "service-3": "Manicura y pedicura",
     "service-3-description": "Mima tus manos y pies con nuestros lujosos tratamientos de cuidado de uñas.",
     "service-3-price": "S/250",
-    "testimonials-title": "Lo que dicen nuestros clientes"
+    "testimonials-title": "Lo que dicen nuestros clientes",
+    "testimonials-1-date": "Agosto de 2024",
+    "testimonials-1-comment": "¡Una experiencia absolutamente increíble! El personal es profesional y los resultados superaron mis expectativas.",
+    "testimonials-2-date": "Enero de 2025",
+    "testimonials-2-comment": "¡El mejor salón de la ciudad! Me encanta cómo transformaron mi cabello y su atención al detalle.",
+    "testimonials-3-date": "Marzo de 2025",
+    "testimonials-3-comment": "Un ambiente tan relajante y un servicio fantástico. ¡Definitivamente volveré!"
   }
 
 }
