@@ -2,7 +2,7 @@
 
 import "../styles/login.css";
 import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 export default function LoginPage() {
   const { data: session } = useSession();
   const router = useRouter();
+  const pathname = usePathname(); // Megbízhatóbb módszer az URL elérésére
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,10 +22,10 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (session) {
-      const currentLocale = window.location.pathname.split("/")[1]; // Nyelv kiszedése az URL-ből
-      router.push(`/${currentLocale}/admin`);
+      const locale = pathname.split("/")[1]; // Nyelvi előtag meghatározása
+      router.push(`/${locale}/admin`); // Admin oldalra irányítás helyes nyelven
     }
-  }, [session, router]);
+  }, [session, router, pathname]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,11 +34,15 @@ export default function LoginPage() {
     const result = await signIn("credentials", {
       email,
       password,
-      redirect: false,
+      redirect: false, // Fontos, hogy ne irányítson el automatikusan
     });
 
     if (result?.error) {
       setError("Invalid email or password");
+    } else {
+      router.refresh(); // Session frissítése
+      const locale = pathname.split("/")[1]; // Nyelv kinyerése
+      router.push(`/${locale}/admin`); // Átirányítás admin oldalra
     }
   };
 
