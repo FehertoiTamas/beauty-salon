@@ -1,27 +1,34 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import "../styles/admin.css";
 import AdminGuard from "../../components/AdminGuard";
-import { signOut } from "next-auth/react"; // 🔹 Kijelentkezés importálása
+import { signOut } from "next-auth/react";
 
 export default function AdminDashboard() {
   const [appointments, setAppointments] = useState([]);
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    const storedAppointments = localStorage.getItem("appointments");
-    if (storedAppointments) {
-      setAppointments(JSON.parse(storedAppointments));
-    }
+    fetchAppointments();
   }, []);
 
-  const updateAppointmentStatus = (id, status) => {
-    const updatedAppointments = appointments.map((appointment) =>
-      appointment.id === id ? { ...appointment, status } : appointment
-    );
-    setAppointments(updatedAppointments);
-    localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+  const fetchAppointments = async () => {
+    const res = await fetch("/api/appointments");
+    const data = await res.json();
+    setAppointments(data);
+  };
+
+  const updateAppointmentStatus = async (id, status) => {
+    const res = await fetch("/api/appointments", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, status }),
+    });
+
+    if (res.ok) {
+      fetchAppointments(); // Frissítsük a listát
+    }
   };
 
   const filteredAppointments = appointments.filter((appointment) =>
@@ -34,7 +41,9 @@ export default function AdminDashboard() {
         <div className="container">
           <div className="dashboard-card">
             <h1 className="dashboard-title">Admin Dashboard</h1>
-            <button className="logout-button" onClick={() => signOut()}>Log Out</button> {/* 🔹 Kijelentkezés */}
+            <button className="logout-button" onClick={() => signOut()}>
+              Log Out
+            </button>
 
             {/* Filter Controls */}
             <div className="filter-controls">
@@ -78,9 +87,11 @@ export default function AdminDashboard() {
                 </thead>
                 <tbody>
                   {filteredAppointments.map((appointment) => (
-                    <tr key={appointment.id}>
+                    <tr key={appointment._id}>
                       <td>
-                        <div>{format(new Date(appointment.date), "MMM d, yyyy")}</div>
+                        <div>
+                          {format(new Date(appointment.date), "MMM d, yyyy")}
+                        </div>
                         <div>{appointment.time}</div>
                       </td>
                       <td>
@@ -99,12 +110,22 @@ export default function AdminDashboard() {
                         {appointment.status === "pending" && (
                           <div className="actions">
                             <button
-                              onClick={() => updateAppointmentStatus(appointment.id, "confirmed")}
+                              onClick={() =>
+                                updateAppointmentStatus(
+                                  appointment._id,
+                                  "confirmed"
+                                )
+                              }
                             >
                               Confirm
                             </button>
                             <button
-                              onClick={() => updateAppointmentStatus(appointment.id, "cancelled")}
+                              onClick={() =>
+                                updateAppointmentStatus(
+                                  appointment._id,
+                                  "cancelled"
+                                )
+                              }
                             >
                               Cancel
                             </button>
@@ -119,7 +140,6 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
-
     </AdminGuard>
   );
 }
