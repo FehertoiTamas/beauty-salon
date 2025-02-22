@@ -20,14 +20,20 @@ export default function AdminDashboard() {
   };
 
   const updateAppointmentStatus = async (id, status) => {
-    const res = await fetch("/api/appointments", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, status }),
-    });
+    try {
+      const res = await fetch(`/api/appointments/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status }), // ❌ Nem kell id-t küldeni a body-ban
+      });
 
-    if (res.ok) {
-      fetchAppointments(); // Frissítsük a listát
+      if (!res.ok) {
+        throw new Error("Failed to update appointment");
+      }
+
+      fetchAppointments(); // 🔄 Újratöltjük az adatokat
+    } catch (error) {
+      console.error("Error updating appointment:", error);
     }
   };
 
