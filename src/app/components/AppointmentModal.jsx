@@ -31,11 +31,10 @@ export default function AppointmentModal({ isOpen, onClose }) {
     "18:00",
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const appointment = {
-      id: crypto.randomUUID(),
       date: format(date, "yyyy-MM-dd"),
       time,
       service,
@@ -45,23 +44,25 @@ export default function AppointmentModal({ isOpen, onClose }) {
       status: "pending",
     };
 
-    const existingAppointments = JSON.parse(
-      localStorage.getItem("appointments") || "[]"
-    );
-    localStorage.setItem(
-      "appointments",
-      JSON.stringify([...existingAppointments, appointment])
-    );
+    const response = await fetch("/api/appointments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(appointment),
+    });
 
-    setTime("");
-    setService("");
-    setName("");
-    setEmail("");
-    setPhone("");
+    const result = await response.json();
 
-    onClose();
+    if (result.success) {
+      setTime("");
+      setService("");
+      setName("");
+      setEmail("");
+      setPhone("");
+      onClose();
+    } else {
+      console.error("Error saving appointment:", result.error);
+    }
   };
-
   return (
     <div className="modal-overlay">
       <div className="modal-content">
