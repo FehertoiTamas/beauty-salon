@@ -36,7 +36,10 @@
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
-    "submit-btn": "Book Appointment"
+    "submit-btn": "Book Appointment",
+    "confirmation-title": "Appointment Successfully Booked!",
+    "confirmation-message": "Thank you for booking an appointment! A confirmation email will be sent to your provided address shortly. Please check your inbox and spam folder.",
+    "ok-btn": "OK"
   },
 
   "LoginPage": {

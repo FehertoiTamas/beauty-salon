@@ -36,7 +36,10 @@
     "name": "Nombre",
     "email": "Correo electrónico",
     "phone": "Teléfono",
-    "submit-btn": "Reservar cita"
+    "submit-btn": "Reservar cita",
+    "confirmation-title": "¡Cita reservada con éxito!",
+    "confirmation-message": "¡Gracias por reservar una cita! En breve recibirás un correo electrónico de confirmación en la dirección que proporcionaste. Por favor, revisa tu bandeja de entrada y la carpeta de spam.",
+    "ok-btn": "Aceptar"
   },
 
   "LoginPage": {

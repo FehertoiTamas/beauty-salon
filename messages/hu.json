@@ -36,7 +36,10 @@
     "name": "Név",
     "email": "E-mail",
     "phone": "Telefonszám",
-    "submit-btn": "Időpontfoglalás"
+    "submit-btn": "Időpontfoglalás",
+    "confirmation-title": "Sikeres időpontfoglalás!",
+    "confirmation-message": "Köszönjük, hogy időpontot foglaltál! Hamarosan küldünk egy megerősítő e-mailt az általad megadott címre. Kérjük, ellenőrizd a beérkező üzeneteket és a spam mappát is!",
+    "ok-btn": "Rendben"
   },
 
   "LoginPage": {
