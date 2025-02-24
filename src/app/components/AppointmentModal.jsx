@@ -8,6 +8,7 @@ import "react-calendar/dist/Calendar.css";
 import { useTranslations } from "next-intl";
 
 export default function AppointmentModal({ isOpen, onClose }) {
+  const t = useTranslations("AppointmentModal");
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("");
   const [service, setService] = useState("");
@@ -16,7 +17,8 @@ export default function AppointmentModal({ isOpen, onClose }) {
   const [phone, setPhone] = useState("");
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // 🔹 Betöltési állapot
-  const t = useTranslations("AppointmentModal");
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   if (!isOpen) return null;
 
@@ -64,10 +66,12 @@ export default function AppointmentModal({ isOpen, onClose }) {
         setEmail("");
         setPhone("");
       } else {
-        console.error("Error saving appointment:", result.error);
+        setErrorMessage(result.error || "Hiba történt a foglalás során.");
+        setShowErrorModal(true); // 🔹 Hibás foglalás esetén felugró ablak
       }
     } catch (error) {
-      console.error("Request failed:", error);
+      setErrorMessage("A szerver nem elérhető. Próbáld újra később.");
+      setShowErrorModal(true);
     } finally {
       setIsLoading(false); // 🔹 Lekérés vége
     }
@@ -188,6 +192,21 @@ export default function AppointmentModal({ isOpen, onClose }) {
               className="ok-button"
             >
               {t("ok-btn")}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showErrorModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Foglalás sikertelen</h2>
+            <p>{errorMessage}</p>
+            <button
+              onClick={() => setShowErrorModal(false)}
+              className="submit-button"
+            >
+              Rendben
             </button>
           </div>
         </div>
