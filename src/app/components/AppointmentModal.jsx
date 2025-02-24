@@ -14,6 +14,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [showConfirmation, setShowConfirmation] = useState(false); // 🔹 Új állapot a felugró ablakhoz
   const t = useTranslations("AppointmentModal");
 
   if (!isOpen) return null;
@@ -52,17 +53,18 @@ export default function AppointmentModal({ isOpen, onClose }) {
 
     const result = await response.json();
 
-    if (result.success) {
+    if (response.ok) {
+      setShowConfirmation(true); // 🔹 Megmutatjuk a visszaigazoló ablakot
       setTime("");
       setService("");
       setName("");
       setEmail("");
       setPhone("");
-      onClose();
     } else {
       console.error("Error saving appointment:", result.error);
     }
   };
+
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -154,6 +156,25 @@ export default function AppointmentModal({ isOpen, onClose }) {
           </div>
         </form>
       </div>
+
+      {/* 🔹 Visszaigazoló modal */}
+      {showConfirmation && (
+        <div className="confirmation-modal">
+          <div className="confirmation-content">
+            <h2>{t("confirmation-title")}</h2>
+            <p>{t("confirmation-message")}</p>
+            <button
+              onClick={() => {
+                setShowConfirmation(false);
+                onClose();
+              }}
+              className="ok-button"
+            >
+              {t("ok-btn")}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
