@@ -178,3 +178,31 @@
 .ok-button:hover {
   background: #db2777;
 }
+
+/* 🔹 Betöltési animáció (spinner) */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+  border-radius: 50%;
+  border-top: 3px solid transparent;
+  animation: spin 1s linear infinite;
+}
+
+/* 🔹 Animáció */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 🔹 Betöltés alatt a gomb */
+.submit-button:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+}

@@ -14,7 +14,8 @@ export default function AppointmentModal({ isOpen, onClose }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [showConfirmation, setShowConfirmation] = useState(false); // 🔹 Új állapot a felugró ablakhoz
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // 🔹 Betöltési állapot
   const t = useTranslations("AppointmentModal");
 
   if (!isOpen) return null;
@@ -34,6 +35,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true); // 🔹 Indul a betöltés
 
     const appointment = {
       date: format(date, "yyyy-MM-dd"),
@@ -45,23 +47,29 @@ export default function AppointmentModal({ isOpen, onClose }) {
       status: "pending",
     };
 
-    const response = await fetch("/api/appointments", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(appointment),
-    });
+    try {
+      const response = await fetch("/api/appointments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(appointment),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
-    if (response.ok) {
-      setShowConfirmation(true); // 🔹 Megmutatjuk a visszaigazoló ablakot
-      setTime("");
-      setService("");
-      setName("");
-      setEmail("");
-      setPhone("");
-    } else {
-      console.error("Error saving appointment:", result.error);
+      if (response.ok) {
+        setShowConfirmation(true);
+        setTime("");
+        setService("");
+        setName("");
+        setEmail("");
+        setPhone("");
+      } else {
+        console.error("Error saving appointment:", result.error);
+      }
+    } catch (error) {
+      console.error("Request failed:", error);
+    } finally {
+      setIsLoading(false); // 🔹 Lekérés vége
     }
   };
 
@@ -88,6 +96,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
                   type="button"
                   onClick={() => setTime(t)}
                   className={`time-button ${time === t ? "selected" : ""}`}
+                  disabled={isLoading} // 🔹 Letiltva betöltés közben
                 >
                   {t}
                 </button>
@@ -102,6 +111,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
               onChange={(e) => setService(e.target.value)}
               className="input-field"
               required
+              disabled={isLoading} // 🔹 Letiltva betöltés közben
             >
               <option value="">{t("service-label")}</option>
               <option value="Luxury Facial Treatment">
@@ -124,6 +134,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
               onChange={(e) => setName(e.target.value)}
               className="input-field"
               required
+              disabled={isLoading}
             />
           </div>
 
@@ -135,6 +146,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
               onChange={(e) => setEmail(e.target.value)}
               className="input-field"
               required
+              disabled={isLoading}
             />
           </div>
 
@@ -146,12 +158,17 @@ export default function AppointmentModal({ isOpen, onClose }) {
               onChange={(e) => setPhone(e.target.value)}
               className="input-field"
               required
+              disabled={isLoading}
             />
           </div>
 
           <div className="form-footer">
-            <button type="submit" className="submit-button">
-              {t("submit-btn")}
+            <button
+              type="submit"
+              className="submit-button"
+              disabled={isLoading}
+            >
+              {isLoading ? <span className="spinner"></span> : t("submit-btn")}
             </button>
           </div>
         </form>
