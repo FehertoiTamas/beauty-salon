@@ -41,7 +41,14 @@ export default function AppointmentModal({ isOpen, onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // 🔹 Indul a betöltés
+    setIsLoading(true);
+
+    if (!time) {
+      setErrorMessage("Kérlek, válassz egy időpontot!");
+      setShowErrorModal(true);
+      setIsLoading(false);
+      return;
+    }
 
     const appointment = {
       date: format(date, "yyyy-MM-dd"),
@@ -58,7 +65,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept-Language": locale, // 🔹 Küldjük a nyelvet a szervernek
+          "Accept-Language": locale,
         },
         body: JSON.stringify(appointment),
       });
@@ -74,13 +81,13 @@ export default function AppointmentModal({ isOpen, onClose }) {
         setPhone("");
       } else {
         setErrorMessage(result.error || "Hiba történt a foglalás során.");
-        setShowErrorModal(true); // 🔹 Hibás foglalás esetén felugró ablak
+        setShowErrorModal(true);
       }
     } catch (error) {
       setErrorMessage("A szerver nem elérhető. Próbáld újra később.");
       setShowErrorModal(true);
     } finally {
-      setIsLoading(false); // 🔹 Lekérés vége
+      setIsLoading(false);
     }
   };
 
@@ -177,7 +184,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
             <button
               type="submit"
               className="submit-button"
-              disabled={isLoading}
+              disabled={isLoading || !time}
             >
               {isLoading ? <span className="spinner"></span> : t("submit-btn")}
             </button>
