@@ -47,6 +47,11 @@
     "email": "Email",
     "password": "Password",
     "submit-btn": "Sign in with Email"
+  },
+
+  "ServerPost": {
+    "appointmentTaken": "This time slot is already booked. Please choose another.",
+    "appointmentSuccess": "Your appointment has been successfully booked!"
   }
 
 }

@@ -1,11 +1,12 @@
 "use client";
 
 import "../[locale]/styles/appointment-modal.css";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import { format } from "date-fns";
 import "react-calendar/dist/Calendar.css";
-import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 export default function AppointmentModal({ isOpen, onClose }) {
   const t = useTranslations("AppointmentModal");
@@ -19,6 +20,9 @@ export default function AppointmentModal({ isOpen, onClose }) {
   const [isLoading, setIsLoading] = useState(false); // 🔹 Betöltési állapot
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
 
   if (!isOpen) return null;
 
@@ -52,7 +56,10 @@ export default function AppointmentModal({ isOpen, onClose }) {
     try {
       const response = await fetch("/api/appointments", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": locale, // 🔹 Küldjük a nyelvet a szervernek
+        },
         body: JSON.stringify(appointment),
       });
 

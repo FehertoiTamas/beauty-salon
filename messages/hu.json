@@ -47,6 +47,11 @@
     "email": "E-mail",
     "password": "Jelszó",
     "submit-btn": "Bejelentkezés e-maillel"
+  },
+
+  "ServerPost": {
+    "appointmentTaken": "Az időpont már foglalt. Kérjük, válassz másikat.",
+    "appointmentSuccess": "Sikeresen lefoglaltad az időpontot!"
   }
 
 }
