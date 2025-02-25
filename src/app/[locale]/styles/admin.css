@@ -129,3 +129,17 @@
 .actions button:active {
   background-color: #cbd5e0;
 }
+
+.delete-button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 4px;
+}
+
+.delete-button:hover {
+  background-color: #c9302c;
+}

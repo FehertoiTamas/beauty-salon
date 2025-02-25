@@ -137,6 +137,12 @@ export default function AdminDashboard() {
                             </button>
                           </div>
                         )}
+                        <button
+                          className="delete-button"
+                          onClick={() => deleteAppointment(appointment._id)}
+                        >
+                          Delete
+                        </button>
                       </td>
                     </tr>
                   ))}
