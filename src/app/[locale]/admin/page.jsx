@@ -37,6 +37,22 @@ export default function AdminDashboard() {
     }
   };
 
+  const deleteAppointment = async (id) => {
+    try {
+      const res = await fetch(`/api/appointments/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to delete appointment");
+      }
+
+      fetchAppointments(); // 🔄 Frissítjük a listát törlés után
+    } catch (error) {
+      console.error("Error deleting appointment:", error);
+    }
+  };
+
   const filteredAppointments = appointments.filter((appointment) =>
     filter === "all" ? true : appointment.status === filter
   );
