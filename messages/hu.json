@@ -51,8 +51,19 @@
 
   "AdminPage": {
     "title": "Adminisztrációs felület",
-    "logout-btn": "Kijelentkezés",
-    "filterAll-btn": "Összes"
+    "logOut-btn": "Kijelentkezés",
+    "filterAll-btn": "Összes",
+    "filterPending-btn": "Függőben",
+    "filterConfirmed-btn": "Megerősített",
+    "filterCancelled-btn": "Törölt",
+    "appointment-date&time": "Dátum és idő",
+    "appinment-client": "Ügyfél",
+    "appointmrnt-service": "Szolgáltatás",
+    "appointment-status": "Státusz",
+    "appointment-action": "Művelet",
+    "cancel-btn": "Törlés",
+    "confirm-btn": "Megerősítés",
+    "delete-btn": "Törlés"
   },
 
 

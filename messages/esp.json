@@ -51,8 +51,19 @@
 
   "AdminPage": {
     "title": "Panel de administración",
-    "logout-btn": "Cerrar sesión",
-    "filterAll-btn": "Todos"
+    "logOut-btn": "Cerrar sesión",
+    "filterAll-btn": "Todos",
+    "filterPending-btn": "Pendiente",
+    "filterConfirmed-btn": "Confirmado",
+    "filterCancelled-btn": "Cancelado",
+    "appointment-date&time": "Fecha y hora",
+    "appinment-client": "Cliente",
+    "appointmrnt-service": "Servicio",
+    "appointment-status": "Estado",
+    "appointment-action": "Acción",
+    "cancel-btn": "Cancelar",
+    "confirm-btn": "Confirmar",
+    "delete-btn": "Eliminar"
   },
 
   "ServerPost": {

@@ -52,7 +52,18 @@
   "AdminPage": {
     "title": "Admin Dashboard",
     "logOut-btn": "Logout",
-    "filterAll-btn": "All"
+    "filterAll-btn": "All",
+    "filterPending-btn": "Pending",
+    "filterConfirmed-btn": "Confirmed",
+    "filterCancelled-btn": "Cancelled",
+    "appointment-date&time": "Date & Time",
+    "appinment-client": "Client",
+    "appointmrnt-service": "Service",
+    "appointment-status": "Status",
+    "appointment-action": "Action",
+    "cancel-btn": "Cancel",
+    "confirm-btn": "Confirm",
+    "delete-btn": "Delete"
   },
 
   "ServerPost": {

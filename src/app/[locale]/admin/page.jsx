@@ -67,7 +67,7 @@ export default function AdminDashboard() {
           <div className="dashboard-card">
             <h1 className="dashboard-title">{t("title")}</h1>
             <button className="logout-button" onClick={() => signOut()}>
-              {t("logout-btn")}
+              {t("logOut-btn")}
             </button>
 
             {/* Filter Controls */}
@@ -82,19 +82,19 @@ export default function AdminDashboard() {
                 onClick={() => setFilter("pending")}
                 className={filter === "pending" ? "active" : ""}
               >
-                Pending
+                {t("filterPending-btn")}
               </button>
               <button
                 onClick={() => setFilter("confirmed")}
                 className={filter === "confirmed" ? "active" : ""}
               >
-                Confirmed
+                {t("filterConfirmed-btn")}
               </button>
               <button
                 onClick={() => setFilter("cancelled")}
                 className={filter === "cancelled" ? "active" : ""}
               >
-                Cancelled
+                {t("filterCancelled-btn")}
               </button>
             </div>
 
@@ -103,11 +103,11 @@ export default function AdminDashboard() {
               <table>
                 <thead>
                   <tr>
-                    <th>Date & Time</th>
-                    <th>Client</th>
-                    <th>Service</th>
-                    <th>Status</th>
-                    <th>Actions</th>
+                    <th>{t("appointment-date&time")}</th>
+                    <th>{t("appinment-client")}</th>
+                    <th>{t("appointmrnt-service")}</th>
+                    <th>{t("appointment-status")}</th>
+                    <th>{t("appointment-action")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -142,7 +142,7 @@ export default function AdminDashboard() {
                                 )
                               }
                             >
-                              Confirm
+                              {t("confirm-btn")}
                             </button>
                             <button
                               onClick={() =>
@@ -152,7 +152,7 @@ export default function AdminDashboard() {
                                 )
                               }
                             >
-                              Cancel
+                              {t("cancel-btn")}
                             </button>
                           </div>
                         )}
@@ -160,7 +160,7 @@ export default function AdminDashboard() {
                           className="delete-button"
                           onClick={() => deleteAppointment(appointment._id)}
                         >
-                          Delete
+                          {t("delete-btn")}
                         </button>
                       </td>
                     </tr>
