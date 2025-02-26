@@ -4,10 +4,13 @@ import { format } from "date-fns";
 import "../styles/admin.css";
 import AdminGuard from "../../components/AdminGuard";
 import { signOut } from "next-auth/react";
+import { useTranslations } from "next-intl";
 
 export default function AdminDashboard() {
   const [appointments, setAppointments] = useState([]);
   const [filter, setFilter] = useState("all");
+
+  const t = useTranslations("AdminPage");
 
   useEffect(() => {
     fetchAppointments();
@@ -62,9 +65,9 @@ export default function AdminDashboard() {
       <div className="admin-dashboard">
         <div className="container">
           <div className="dashboard-card">
-            <h1 className="dashboard-title">Admin Dashboard</h1>
+            <h1 className="dashboard-title">{t("title")}</h1>
             <button className="logout-button" onClick={() => signOut()}>
-              Log Out
+              {t("logout-btn")}
             </button>
 
             {/* Filter Controls */}
@@ -73,7 +76,7 @@ export default function AdminDashboard() {
                 onClick={() => setFilter("all")}
                 className={filter === "all" ? "active" : ""}
               >
-                All
+                {t("filterAll-btn")}
               </button>
               <button
                 onClick={() => setFilter("pending")}

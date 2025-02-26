@@ -49,6 +49,12 @@
     "submit-btn": "Sign in with Email"
   },
 
+  "AdminPage": {
+    "title": "Admin Dashboard",
+    "logOut-btn": "Logout",
+    "filterAll-btn": "All"
+  },
+
   "ServerPost": {
     "appointmentTaken": "This time slot is already booked. Please choose another.",
     "appointmentSuccess": "Your appointment has been successfully booked!"

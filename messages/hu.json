@@ -49,6 +49,13 @@
     "submit-btn": "Bejelentkezés e-maillel"
   },
 
+  "AdminPage": {
+    "title": "Adminisztrációs felület",
+    "logout-btn": "Kijelentkezés",
+    "filterAll-btn": "Összes"
+  },
+
+
   "ServerPost": {
     "appointmentTaken": "Az időpont már foglalt. Kérjük, válassz másikat.",
     "appointmentSuccess": "Sikeresen lefoglaltad az időpontot!"

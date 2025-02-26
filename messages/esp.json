@@ -49,6 +49,12 @@
     "submit-btn": "Iniciar sesión con correo electrónico"
   },
 
+  "AdminPage": {
+    "title": "Panel de administración",
+    "logout-btn": "Cerrar sesión",
+    "filterAll-btn": "Todos"
+  },
+
   "ServerPost": {
     "appointmentTaken": "Esta hora ya está reservada. Por favor, elige otra.",
     "appointmentSuccess": "¡Tu cita ha sido reservada con éxito!"
