@@ -12,6 +12,7 @@ const getMessages = async (locale) => {
     return {};
   }
 };
+
 export async function GET(req) {
   await connectToDatabase();
 
@@ -22,6 +23,7 @@ export async function GET(req) {
     return NextResponse.json({ error: "Failed to fetch appointments" }, { status: 500 });
   }
 }
+
 
 export async function POST(req) {
   try {

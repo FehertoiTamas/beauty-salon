@@ -2,7 +2,7 @@
 
 import "../[locale]/styles/appointment-modal.css";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import { format } from "date-fns";
 import "react-calendar/dist/Calendar.css";
@@ -24,7 +24,54 @@ export default function AppointmentModal({ isOpen, onClose }) {
   const pathname = usePathname();
   const locale = pathname.split("/")[1];
 
-  if (!isOpen) return null;
+  const [bookedTimes, setBookedTimes] = useState([]); // 🔹 Foglalt időpontok
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsVisible(true);
+      setDate(new Date());
+      setTime("");
+      setService("");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setShowConfirmation(false);
+      setShowErrorModal(false);
+    } else {
+      // Adj egy kis késleltetést a bezárásnál, ha animációt használsz
+      setTimeout(() => setIsVisible(false), 300);
+    }
+  }, [isOpen]);
+
+  // Foglalt időpontok lekérése a kiválasztott dátumhoz és szolgáltatáshoz
+  useEffect(() => {
+    if (isOpen && service) {
+      const fetchBookedTimes = async () => {
+        try {
+          const response = await fetch(
+            `/api/appointments/available?date=${format(
+              date,
+              "yyyy-MM-dd"
+            )}&service=${service}`
+          );
+
+          const result = await response.json();
+          if (response.ok) {
+            setBookedTimes(result.bookedTimes);
+          } else {
+            console.error("Hiba a foglalások lekérésekor:", result.error);
+          }
+        } catch (error) {
+          console.error("Szerver hiba:", error);
+        }
+      };
+
+      fetchBookedTimes();
+    }
+  }, [isOpen, date, service]);
+
+  if (!isVisible) return null;
 
   const availableTimes = [
     "09:00",
@@ -106,7 +153,6 @@ export default function AppointmentModal({ isOpen, onClose }) {
             <div className="calendar">
               <Calendar onChange={setDate} value={date} minDate={new Date()} />
             </div>
-
             <div className="available-times">
               {availableTimes.map((t) => (
                 <button
@@ -114,7 +160,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
                   type="button"
                   onClick={() => setTime(t)}
                   className={`time-button ${time === t ? "selected" : ""}`}
-                  disabled={isLoading} // 🔹 Letiltva betöltés közben
+                  disabled={isLoading || bookedTimes.includes(t)}
                 >
                   {t}
                 </button>
