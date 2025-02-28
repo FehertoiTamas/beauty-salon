@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { format } from "date-fns";
 import "../styles/admin.css";
 import AdminGuard from "../../components/AdminGuard";
 import { signOut } from "next-auth/react";
@@ -73,7 +72,7 @@ export default function AdminDashboard() {
   return (
     <AdminGuard>
       <div className="admin-dashboard">
-        <div className="container">
+        <div className="dashboard-container">
           <div className="dashboard-card">
             <h1 className="dashboard-title">{t("title")}</h1>
             <button className="logout-button" onClick={() => signOut()}>
