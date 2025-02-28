@@ -165,12 +165,14 @@ export default function AdminDashboard() {
                             </button>
                           </div>
                         )}
-                        <button
-                          className="delete-button"
-                          onClick={() => deleteAppointment(appointment._id)}
-                        >
-                          {t("delete-btn")}
-                        </button>
+                        {appointment.status !== "pending" && (
+                          <button
+                            className="delete-button"
+                            onClick={() => deleteAppointment(appointment._id)}
+                          >
+                            {t("delete-btn")}
+                          </button>
+                        )}
                       </td>
                     </tr>
                   ))}
