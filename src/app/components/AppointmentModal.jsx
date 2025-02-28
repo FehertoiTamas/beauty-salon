@@ -50,14 +50,14 @@ export default function AppointmentModal({ isOpen, onClose }) {
       const fetchBookedTimes = async () => {
         try {
           const formattedDate = format(date, "yyyy-MM-dd");
-          console.log("Fetching booked times for:", formattedDate, service);
+          //console.log("Fetching booked times for:", formattedDate, service);
 
           const response = await fetch(
             `/api/appointments/available?date=${formattedDate}&service=${service}`
           );
 
           const result = await response.json();
-          console.log("API response:", result);
+          //console.log("API response:", result);
 
           if (response.ok) {
             setBookedTimes(result.bookedTimes);
@@ -162,7 +162,9 @@ export default function AppointmentModal({ isOpen, onClose }) {
                   key={t}
                   type="button"
                   onClick={() => setTime(t)}
-                  className={`time-button ${time === t ? "selected" : ""}`}
+                  className={`time-button ${time === t ? "selected" : ""} ${
+                    bookedTimes.includes(t) ? "booked" : "available"
+                  }`}
                   disabled={isLoading || bookedTimes.includes(t)}
                 >
                   {t}

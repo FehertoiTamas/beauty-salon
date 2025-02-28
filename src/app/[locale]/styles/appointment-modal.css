@@ -90,7 +90,17 @@
 }
 
 .time-button.selected {
-  background: #ec4899;
+  background: #ec4899 !important;
+  color: white;
+}
+
+.time-button.booked {
+  background: red;
+  color: white;
+}
+
+.time-button.available {
+  background: green;
   color: white;
 }
 
