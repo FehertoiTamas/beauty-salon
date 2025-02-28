@@ -49,14 +49,16 @@ export default function AppointmentModal({ isOpen, onClose }) {
     if (isOpen && service) {
       const fetchBookedTimes = async () => {
         try {
+          const formattedDate = format(date, "yyyy-MM-dd");
+          console.log("Fetching booked times for:", formattedDate, service);
+
           const response = await fetch(
-            `/api/appointments/available?date=${format(
-              date,
-              "yyyy-MM-dd"
-            )}&service=${service}`
+            `/api/appointments/available?date=${formattedDate}&service=${service}`
           );
 
           const result = await response.json();
+          console.log("API response:", result);
+
           if (response.ok) {
             setBookedTimes(result.bookedTimes);
           } else {
@@ -106,7 +108,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
       phone,
       status: "pending",
     };
-    console.log("Küldött dátum:", format(date, "yyyy-MM-dd"), time);
+    //console.log("Küldött dátum:", format(date, "yyyy-MM-dd"), time);
 
     try {
       const response = await fetch("/api/appointments", {
@@ -182,10 +184,10 @@ export default function AppointmentModal({ isOpen, onClose }) {
               <option value="Luxury Facial Treatment">
                 {t("service-option-1")}
               </option>
-              <option value="Hair Styling & Coloring">
+              <option value="Hair Styling  Coloring">
                 {t("service-option-2")}
               </option>
-              <option value="Manicure & Pedicure">
+              <option value="Manicure  Pedicure">
                 {t("service-option-3")}
               </option>
             </select>
