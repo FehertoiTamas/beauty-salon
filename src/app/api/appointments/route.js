@@ -18,6 +18,7 @@ export async function GET(req) {
 
   try {
     const appointments = await Appointment.find({});
+    //console.log("Lekérdezett adatok:", appointments);
     return NextResponse.json(appointments, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: "Failed to fetch appointments" }, { status: 500 });
@@ -30,6 +31,7 @@ export async function POST(req) {
     await connectToDatabase();
     const data = await req.json();
     const { date, time, service } = data;
+    //console.log("Beérkező dátum:", data.date, data.time);
 
     // 🔹 Nyelv meghatározása a kérés fejlécéből vagy alapértelmezett "hu"
     const locale = req.headers.get("Accept-Language")?.split(",")[0];

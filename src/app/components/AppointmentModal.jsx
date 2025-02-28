@@ -106,6 +106,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
       phone,
       status: "pending",
     };
+    console.log("Küldött dátum:", format(date, "yyyy-MM-dd"), time);
 
     try {
       const response = await fetch("/api/appointments", {

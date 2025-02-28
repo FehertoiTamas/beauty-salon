@@ -12,6 +12,16 @@ export default function AdminDashboard() {
 
   const t = useTranslations("AdminPage");
 
+  const formatDateInTimeZone = (dateString, timeZone) => {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+      timeZone,
+    }).format(date);
+  };
+
   useEffect(() => {
     fetchAppointments();
   }, []);
@@ -115,7 +125,7 @@ export default function AdminDashboard() {
                     <tr key={appointment._id}>
                       <td>
                         <div>
-                          {format(new Date(appointment.date), "MMM d, yyyy")}
+                          {formatDateInTimeZone(appointment.date, "UTC")}
                         </div>
                         <div>{appointment.time}</div>
                       </td>
