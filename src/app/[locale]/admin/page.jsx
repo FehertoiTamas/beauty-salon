@@ -31,19 +31,40 @@ export default function AdminDashboard() {
     setAppointments(data);
   };
 
-  const updateAppointmentStatus = async (id, status) => {
+  const updateAppointmentStatus = async (
+    id,
+    status,
+    email,
+    name,
+    date,
+    time,
+    service
+  ) => {
     try {
       const res = await fetch(`/api/appointments/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status }), // ❌ Nem kell id-t küldeni a body-ban
+        body: JSON.stringify({ status }),
       });
 
       if (!res.ok) {
         throw new Error("Failed to update appointment");
       }
 
-      fetchAppointments(); // 🔄 Újratöltjük az adatokat
+      if (status === "confirmed") {
+        // ✅ Küldjük az e-mailt, ha a foglalás megerősítve
+        const emailRes = await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, name, date, time, service }),
+        });
+
+        if (!emailRes.ok) {
+          throw new Error("Failed to send confirmation email");
+        }
+      }
+
+      fetchAppointments(); // 🔄 Csak az e-mail küldés után frissítsük a listát
     } catch (error) {
       console.error("Error updating appointment:", error);
     }
@@ -147,12 +168,17 @@ export default function AdminDashboard() {
                               onClick={() =>
                                 updateAppointmentStatus(
                                   appointment._id,
-                                  "confirmed"
+                                  "confirmed",
+                                  appointment.email,
+                                  appointment.name,
+                                  appointment.date,
+                                  appointment.time,
+                                  appointment.service
                                 )
                               }
                             >
                               {t("confirm-btn")}
-                            </button>
+                            </button>{" "}
                             <button
                               onClick={() =>
                                 updateAppointmentStatus(
