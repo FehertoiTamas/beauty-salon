@@ -3,7 +3,9 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(to right, pink 50%, rgb(202, 235, 232) 50%);
   background-color: #f1f1f1;
+  /* Ha a gradient nem jeleníthető meg, akkor ez a háttérszín marad meg. */
 }
 
 .login-container {
@@ -13,7 +15,10 @@
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: rgba(249, 249, 249, 0.6);
+  /* 60%-os átlátszóság */
+  backdrop-filter: blur(10px);
+  /* Üveghatás (opcionális) */
 }
 
 .login-container h1 {

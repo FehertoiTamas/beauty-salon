@@ -4,8 +4,14 @@ import "../styles/admin.css";
 import AdminGuard from "../../components/AdminGuard";
 import { signOut } from "next-auth/react";
 import { useTranslations } from "next-intl";
+import { useSession } from "next-auth/react";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function AdminDashboard() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  const pathname = usePathname(); // Megbízhatóbb módszer az URL elérésére
+
   const [appointments, setAppointments] = useState([]);
   const [filter, setFilter] = useState("all");
 
@@ -20,6 +26,13 @@ export default function AdminDashboard() {
       timeZone,
     }).format(date);
   };
+
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      const locale = pathname.split("/")[1]; // Nyelvi előtag meghatározása
+      router.push(`/${locale}/login`); // Admin oldalra irányítás helyes nyelven
+    }
+  }, [status, router]);
 
   useEffect(() => {
     fetchAppointments();
