@@ -1,0 +1,50 @@
+.social {
+  height: 100vh;
+  width: 100%;
+  background: #d6d6d6;
+}
+
+.social-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+}
+
+.social-icons-btn {
+  width: 70px;
+  height: 70px;
+  margin: 20px;
+  outline: none;
+  border: none;
+  background: #d6d6d6;
+  box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
+  border-radius: 50%;
+  transition: 0.2;
+}
+
+.social-icons-btn:hover {
+  cursor: pointer;
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.social-icon {
+  font-size: 32px;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.21);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

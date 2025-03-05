@@ -6,6 +6,7 @@ import './styles/hero.css'; // Importáljuk a külön CSS fájlt
 import AppointmentModal from '../components/AppointmentModal';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import { useTranslations } from "next-intl";
+import SocialMedia1 from '../components/SocialMedia1';
 
 
 export default function Home() {
@@ -88,6 +89,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <SocialMedia1 />
 
       {/* Testimonials Section */}
       <section className="testimonials-section">

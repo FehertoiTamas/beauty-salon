@@ -51,14 +51,13 @@ export default function LoginPage() {
       <div className="login-container">
         <h1>{t("title")}</h1>
 
-        {/* Google Login */}
-        <button
+        {/*         <button
           onClick={() => signIn("google")}
           className="login-button google-button"
         >
           Sign in with Google
         </button>
-
+ */}
         <hr style={{ margin: "20px 0" }} />
 
         {/* Email/Password Login */}
