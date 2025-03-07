@@ -23,7 +23,8 @@
     "testimonials-3-comment": "Olyan pihentető a légkör és fantasztikus szolgáltatás. Biztosan visszatérek!",
     "contact-title": "Foglalja le időpontját",
     "contact-description": "Alakítsa át megjelenését szakértő szépségápolási szolgáltatásainkkal. Foglaljon időpontot még ma!",
-    "opening-hours": "Hétfő - Szombat: 9:00 - 20:00"
+    "opening-hours": "Hétfő - Szombat: 9:00 - 20:00",
+    "footer" : "Elegancia Szépségszalon. Minden jog fenntartva."
   },
 
   "AppointmentModal": {
@@ -65,7 +66,6 @@
     "confirm-btn": "Megerősítés",
     "delete-btn": "Törlés"
   },
-
 
   "ServerPost": {
     "appointmentTaken": "Az időpont már foglalt. Kérjük, válassz másikat.",

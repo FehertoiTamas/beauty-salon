@@ -23,7 +23,8 @@
     "testimonials-3-comment": "Un ambiente tan relajante y un servicio fantástico. ¡Definitivamente volveré!",
     "contact-title": "Reserve su cita",
     "contact-description": "Transforma tu look con nuestros servicios de belleza expertos. ¡Reserva tu cita hoy!",
-    "opening-hours": "Lun - Sáb: 9:00 AM - 8:00 PM"
+    "opening-hours": "Lun - Sáb: 9:00 AM - 8:00 PM",
+    "footer" : "Salón de belleza Elegance. Todos los derechos reservados."
   },
 
   "AppointmentModal": {

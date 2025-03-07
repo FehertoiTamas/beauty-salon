@@ -23,7 +23,8 @@
     "testimonials-3-comment": "Such a relaxing atmosphere and fantastic service. I'll definitely be coming back!",
     "contact-title": "Book Your Appointment",
     "contact-description": "Transform your look with our expert beauty services. Book your appointment today!",
-    "opening-hours": "Mon - Sat: 9:00 AM - 8:00 PM"
+    "opening-hours": "Mon - Sat: 9:00 AM - 8:00 PM",
+    "footer" : "Elegance Beauty Salon. All rights reserved."
   },
 
   "AppointmentModal": {

@@ -140,7 +140,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2025 Elegance Beauty Salon. All rights reserved.</p>
+        <p>&copy; 2025 {t("footer")}</p>
       </footer>
 
       <AppointmentModal
