@@ -1,7 +1,7 @@
 .social {
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  background: #d6d6d6;
+  background: #fce4ec;
 }
 
 .social-icons-wrapper {
@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  height: 100vh;
+  height: 100%;
 }
 
 .social-icons-btn {
@@ -18,7 +18,7 @@
   margin: 20px;
   outline: none;
   border: none;
-  background: #d6d6d6;
+  background: #fce4ec;
   box-shadow: 5px 5px 10px #b6a9a9, -5px -5px 10px #ffffff;
   border-radius: 50%;
   transition: 0.2;

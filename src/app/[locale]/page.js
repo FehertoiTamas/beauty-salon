@@ -90,7 +90,6 @@ export default function Home() {
         </div>
       </section>
 
-      <SocialMedia1 />
 
       {/* Testimonials Section */}
       <section className="testimonials-section">
@@ -137,9 +136,11 @@ export default function Home() {
         </div>
       </section>
 
+      <SocialMedia1 />
+
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2023 Elegance Beauty Salon. All rights reserved.</p>
+        <p>&copy; 2025 Elegance Beauty Salon. All rights reserved.</p>
       </footer>
 
       <AppointmentModal
