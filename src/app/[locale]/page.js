@@ -7,6 +7,7 @@ import AppointmentModal from '../components/AppointmentModal';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import { useTranslations } from "next-intl";
 import SocialMedia1 from '../components/SocialMedia1';
+import Gallery from '../components/Gallery';
 
 
 export default function Home() {
@@ -136,6 +137,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Gallery />
       <SocialMedia1 />
 
       {/* Footer */}
