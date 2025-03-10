@@ -32,6 +32,8 @@
 }
 
 .gallery-image {
+  display: block;
+  /* Eltávolítja az extra helyet */
   width: 100%;
   height: 16rem;
   object-fit: cover;
@@ -65,18 +67,24 @@
 }
 
 .modal-content {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  /* Sötét háttér a jobb láthatóságért */
+  border-radius: 0.5rem;
 }
 
 .modal-image {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90vw;
+  /* Maximum szélesség a viewporthoz igazítva */
+  max-height: 80vh;
+  /* Maximum magasság a viewporthoz igazítva */
   object-fit: contain;
+  /* Megőrzi az eredeti képarányokat */
   border-radius: 0.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -87,7 +95,7 @@
   right: 10px;
   background: none;
   border: none;
-  color: white;
+  color: #ec4899;
   font-size: 2rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -96,7 +104,7 @@
 }
 
 .close-button:hover {
-  color: #e5e5e5;
+  color: #db2777;
 }
 
 .prev-button,
@@ -105,13 +113,37 @@
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: #ec4899;
   border: none;
   cursor: pointer;
-  padding: 1rem;
-  font-size: 2rem;
+  width: 3rem;
+  /* Fix méret, hogy a gomb kör legyen */
+  height: 3rem;
+  /* Fix méret */
+  font-size: 1.5rem;
+  /* Kisebb méret, hogy ne torzuljon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1001;
   border-radius: 50%;
+  /* Tökéletes kör */
+  transition: background 0.3s ease;
+}
+
+/* Hover effekt */
+.prev-button:hover,
+.next-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Gombok pozicionálása */
+.prev-button {
+  left: 1rem;
+}
+
+.next-button {
+  right: 1rem;
 }
 
 .prev-button {
