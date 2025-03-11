@@ -94,6 +94,7 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <section className="testimonials-section">
+        <img src="/Images/test.png" alt="" className='test-img' />
         <div className="testimonials-container">
           <h2 className="section-title">{t('testimonials-title')}</h2>
           <div className="testimonials-grid">

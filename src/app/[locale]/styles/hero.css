@@ -113,10 +113,26 @@
 .testimonials-section {
   padding: 5rem 1rem;
   background-color: #fce4ec;
+  position: relative;
+}
+
+.test-img {
+  position: absolute;
+  height: 100%;
+  /* Teszt kép magassága a teljes testimonials-section magasságára állítva */
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .test-img {
+    display: none;
+  }
 }
 
 .testimonials-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -140,6 +156,7 @@
 }
 
 .testimonial-card {
+  z-index: 10;
   background-color: white;
   padding: 1.5rem;
   border-radius: 0.5rem;
@@ -187,7 +204,7 @@
 
 /* Contact Section */
 .contact-section {
-  padding: 80px 120px;
+  padding: 80px 20px;
   background-color: white;
   text-align: center;
 }
