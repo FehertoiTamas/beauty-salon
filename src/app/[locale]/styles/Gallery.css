@@ -63,7 +63,7 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.modal {
+.gallery-modal {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.8);
@@ -74,7 +74,7 @@
   padding: 1rem;
 }
 
-.modal-content {
+.gallery-modal-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +86,7 @@
   border-radius: 0.5rem;
 }
 
-.modal-image {
+.gallery-modal-image {
   max-width: 90vw;
   /* Maximum szélesség a viewporthoz igazítva */
   max-height: 80vh;

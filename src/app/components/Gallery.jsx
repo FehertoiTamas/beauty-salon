@@ -54,8 +54,11 @@ const Gallery = () => {
         </div>
 
         {selectedImageIndex !== null && (
-          <div className="modal" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="gallery-modal" onClick={closeModal}>
+            <div
+              className="gallery-modal-content"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button className="close-button" onClick={closeModal}>
                 ×
               </button>
@@ -65,7 +68,7 @@ const Gallery = () => {
               <img
                 src={images[selectedImageIndex].src}
                 alt={images[selectedImageIndex].alt}
-                className="modal-image"
+                className="gallery-modal-image"
               />
               <button className="next-button" onClick={showNextImage}>
                 &gt;
