@@ -118,6 +118,7 @@ export default function Home() {
       {/* Contact Section */}
       <section className="contact-section">
         <div className="contact-content">
+          <img src="/images/decor.png" alt="" className='decor' />
           <h2 className="contact-title">{t('contact-title')}</h2>
           <p className="contact-text">
             {t('contact-description')}
