@@ -26,9 +26,15 @@
   transition: 0.2s;
 }
 
+.social-icons-btn:hover {
+  cursor: pointer;
+  animation: pulse 0.6s ease-in-out;
+}
+
 .social-icon {
   font-size: 32px;
 }
+
 
 /* Animation remains the same */
 @keyframes pulse {
