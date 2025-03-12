@@ -104,7 +104,14 @@ export default function Home() {
           <h2 className="section-title">{t('testimonials-title')}</h2>
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
+              <motion.div key={index} initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.2, // Késleltetés a kartyak közötti animációhoz
+                }}
+                viewport={{ once: false, amount: 0.5 }}
+                className="testimonial-card">
                 <div className="testimonial-header">
                   <div className="avatar">
                     <UserGroupIcon className="avatar-icon" />
@@ -115,7 +122,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="testimonial-comment">{testimonial.comment}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
