@@ -189,3 +189,9 @@
     font-size: 1.2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .gallery-section {
+    padding: 1rem 1rem;
+  }
+}

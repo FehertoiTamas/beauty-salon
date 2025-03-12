@@ -209,7 +209,7 @@
   text-align: center;
 }
 
-.decor {
+.contact-img {
   width: 15%;
 }
 
@@ -245,6 +245,19 @@
   .contact-container {
     flex-direction: row;
   }
+}
+
+@media (max-width: 768px) {
+  .contact-img {
+    width: 35%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 20px 20px;
+  }
+
 }
 
 .contact-hours {
