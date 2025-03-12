@@ -129,7 +129,13 @@ export default function Home() {
       </motion.section>
 
       {/* Contact Section */}
-      <section className="contact-section">
+      <motion.section
+        className="contact-section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
         <div className="contact-content">
           <img src="/images/decor.png" alt="" className='contact-img' />
           <h2 className="contact-title">{t('contact-title')}</h2>
@@ -149,7 +155,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Gallery />
       <SocialMedia1 />

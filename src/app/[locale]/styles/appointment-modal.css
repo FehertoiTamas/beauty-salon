@@ -34,7 +34,7 @@
   color: #333;
 }
 
-.close-button {
+.cls-button {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 
-.close-button:hover {
+.cls-button:hover {
   color: #333;
 }
 
