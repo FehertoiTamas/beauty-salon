@@ -8,7 +8,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 import { useTranslations } from "next-intl";
 import SocialMedia1 from '../components/SocialMedia1';
 import Gallery from '../components/Gallery';
-
+import { motion } from "framer-motion";
 
 export default function Home() {
   const t = useTranslations("LandingPage");
@@ -93,7 +93,12 @@ export default function Home() {
 
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="testimonials-section">
         <img src="/Images/test.png" alt="" className='test-img' />
         <div className="testimonials-container">
           <h2 className="section-title">{t('testimonials-title')}</h2>
@@ -114,7 +119,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
       <section className="contact-section">

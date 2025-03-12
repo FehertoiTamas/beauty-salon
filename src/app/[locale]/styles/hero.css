@@ -229,7 +229,6 @@
 
 .contact-text {
   color: #4b5563;
-  /* Equivalent to Tailwind's text-gray-600 */
   margin-bottom: 2rem;
 }
 
@@ -257,7 +256,6 @@
   .contact-section {
     padding: 20px 20px;
   }
-
 }
 
 .contact-hours {
