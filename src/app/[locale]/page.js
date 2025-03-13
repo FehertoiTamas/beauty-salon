@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import SocialMedia1 from '../components/SocialMedia1';
 import Gallery from '../components/Gallery';
 import { motion } from "framer-motion";
+import AboutUs from '../components/AboutUs';
 
 export default function Home() {
   const t = useTranslations("LandingPage");
@@ -67,6 +68,8 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      <AboutUs />
 
       {/* Services Section */}
       <section className="services-section">
