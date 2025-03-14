@@ -7,6 +7,14 @@ const AboutUs = () => {
       <div className="about-us-container">
         <div className="about-layer">
           <h2>About us</h2>
+          <p>
+            Üdvözöljük a Szépségvarázslat Szalonban, ahol szakértő kezek
+            gondoskodnak az Ön szépségéről. Célunk, hogy minden vendégünk
+            ragyogóan és magabiztosan távozzon. Legyen szó haj-, bőr- vagy
+            körömápolásról, nálunk prémium szolgáltatásokat és kellemes
+            kikapcsolódást talál. Látogasson el hozzánk, és élvezze a tökéletes
+            szépségélményt!
+          </p>
         </div>
       </div>
       <Image
