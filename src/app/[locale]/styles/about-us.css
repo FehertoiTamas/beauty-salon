@@ -34,7 +34,7 @@
 }
 
 .about-layer h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #333;
 }
 
@@ -57,7 +57,7 @@
 /* Első kép (jobb oldalt) */
 .about-image1 {
   top: 50%;
-  right: 10%;
+  right: 5%;
   width: 20%;
   transform: translateY(-50%);
 }
@@ -78,8 +78,9 @@
   }
 
   .about-image1 {
+    top: 25%;
     right: 5%;
-    width: 30%;
+    width: 22%;
   }
 
   .about-image2 {
@@ -102,8 +103,9 @@
     padding: 1.5rem;
   }
 
-  .about-layer h2 {
-    font-size: 1.5rem;
+  .about-layer {
+    padding: 2rem;
+    gap: 2rem;
   }
 
   .about-image1,
@@ -115,6 +117,7 @@
   }
 
   .about-image1 {
+    display: none;
     right: auto;
     top: auto;
   }
@@ -122,5 +125,21 @@
   .about-image2 {
     left: auto;
     top: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+  }
+
+  .about-image1 {
+    display: none;
+  }
+
+  .about-image2 {
+    width: 30%;
   }
 }
