@@ -140,7 +140,7 @@ export default function Home() {
         viewport={{ once: false, amount: 0.3 }}
       >
         <div className="contact-content">
-          <img src="/images/decor.png" alt="" className='contact-img' />
+          <img src="/Images/decor.png" alt="" className='contact-img' />
           <h2 className="contact-title">{t('contact-title')}</h2>
           <p className="contact-text">
             {t('contact-description')}
