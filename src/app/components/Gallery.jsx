@@ -29,7 +29,7 @@ const Gallery = () => {
 
   return (
     <section className="gallery-section" id="gallery">
-      <img src="/images/leaf.png" alt="" className="leaf" />
+      <img src="/Images/leaf.png" alt="" className="leaf" />
       <div className="gallery-container">
         <h2 className="gallery-title">Gallery</h2>
 
