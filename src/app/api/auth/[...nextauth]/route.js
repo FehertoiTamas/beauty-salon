@@ -2,8 +2,8 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 
-const ADMIN_EMAIL = "admin@example.com";
-const ADMIN_HASHED_PASSWORD = "$2b$10$ZY3/TMN6oDjTdoDByc1NreZjRf5jsx3csfN4M5HWDGORMOZ4EDWYS"; // "password" hash-elve
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const ADMIN_HASHED_PASSWORD = process.env.ADMIN_HASHED_PASSWORD;
 
 export const authOptions = {
   providers: [
