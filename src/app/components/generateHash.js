@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 
 async function generateHash() {
   // Az admin jelszó amit használni szeretnél
-  const password = 'tomi123';
+  const password = '';
 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);

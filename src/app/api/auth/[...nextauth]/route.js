@@ -3,9 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
-const ADMIN_HASHED_PASSWORD = process.env.ADMIN_HASHED_PASSWORD;
-console.log('ADMIN_EMAIL:', ADMIN_EMAIL);
-console.log('ADMIN_HASHED_PASSWORD:', ADMIN_HASHED_PASSWORD);
+const ADMIN_HASHED_PASSWORD = "$2b$10$i8Rg6VMhMGKDX809b51LMO37kxf3tV2sNXYkISIHtF3Wi95fg0cTe";
 
 export const authOptions = {
   providers: [
