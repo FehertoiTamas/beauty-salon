@@ -4,6 +4,8 @@ import { compare } from "bcryptjs";
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 const ADMIN_HASHED_PASSWORD = process.env.ADMIN_HASHED_PASSWORD;
+console.log('ADMIN_EMAIL:', ADMIN_EMAIL);
+console.log('ADMIN_HASHED_PASSWORD:', ADMIN_HASHED_PASSWORD);
 
 export const authOptions = {
   providers: [
@@ -14,6 +16,7 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+
         // Ellenőrizzük az emailt
         if (credentials.email !== ADMIN_EMAIL) {
           throw new Error("Invalid email or password");

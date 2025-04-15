@@ -47,7 +47,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="login-page">
+    <div className="login-page">
       <div className="login-container">
         <h1>{t("title")}</h1>
 
@@ -91,6 +91,6 @@ export default function LoginPage() {
 
         {error && <p className="error-message">{error}</p>}
       </div>
-    </main>
+    </div>
   );
 }
